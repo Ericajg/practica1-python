@@ -1,37 +1,35 @@
 import random 
-
-numero_secreto = random.randint(1, 99)
+numero_secreto = random.randint (1, 80)
 intento = 0
+print("-"*41)
+print ("BIENVENIDOS AL JUEGO DE ADIVINA EL NUMERO")
+print("-"*41)
+while intento < 5: 
 
-print("-"*41 + "\nBIENVENIDOS AL JUEGO DE ADIVINA EL NUMERO\n" + "-"*41 + "\n")
-nombre = input("\nIngresa nombre Jugador:\n")
-
-while intento < 5:
-    numero = input("\nIngrese un numero del 1 al 99:\n")
-
-    if not numero.isdigit():
-        print("\nError!.\nEl valor ingresado no es un numero.\nIntenta de nuevo...\n")
-
-    else:
-        numero = int(numero)
- 
-        if numero == numero_secreto:
-            print("\nFelicitaciones "+ nombre +"!.\nGanasteeee!!\nAcertaste el numero\nPromocion directa atte: Gabi\n┌∩┐(◣_◢)┌∩┐")
-            break
- 
-        elif numero < numero_secreto:
-            intento += 1
-            print("\nEl numero secreto es mayor.\nTe quedan:", 5 - intento, "intentos\n")
- 
-        elif numero > numero_secreto:
-            intento += 1
-            print("\nEl numero secreto es menor.\nTe quedan:", 5 - intento, "intentos\n")
- 
+    numero = (input("ingrese un numero del 1 al 80: ")) 
+    if numero.isdigit():
+        if int(numero) >0 and int(numero) <81:
+        
+            if int(numero) == numero_secreto:
+                print("tu numero es correcto ganasteeee!! promoción directa atte: Gabi")
+                break
+        
+            elif  int(numero) < numero_secreto:
+                intento = intento+1
+                print  ("El número es mayor. Te quedan: ",5-intento,"intentos")
+            elif  int(numero) > numero_secreto:
+                intento = intento+1
+                print  ("El número es menor. Te quedan: ",5-intento,"intentos")
+        
         else:
-            print("\nNumero fuera de rango.\nIntenta nuevamente...\n")
+            print("Fuera de rango")
+                
+        
+    else:
+        print("Ingresa un NUMEROOO, infeliz")  
 
-if intento == 5:
-    print("\n(--)| -PERDISTE- |(--)\n"+"-"*25+"\n"+"El numero secreto era: " + str(numero_secreto)+"\n"+"-"*25)
-
-
-
+if intento==5:
+    print ("<<<<<| PERDISTE, otra vez será!!! |>>>>>")
+    print("-"*40)
+    print ("       El numero secreto es:",numero_secreto )
+    print("-"*40)
